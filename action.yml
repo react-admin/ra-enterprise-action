@@ -5,7 +5,7 @@ branding:
   icon: "file-plus"
   color: "blue"
 env:
-  CI_TOKEN:
+  RA_TOKEN:
     description: "ReactAdmin Enterprise Edition secret CI token"
     required: true
 runs:
@@ -14,14 +14,10 @@ runs:
     # create `.npmrc` file to be used by npm or Yarn v1
     - name: Create .npmrc if not exists
       run: |
-        [[ -f .npmrc ]] || touch .npmrc
+        [[ -f $HOME/.npmrc ]] || touch $HOME/.npmrc
       shell: bash
     - name: Complete .npmrc
       run: |
-        echo "@react-admin:registry https://registry.marmelab.com" >> .npmrc
-        echo "//registry.marmelab.com/:_authToken=${{ env.CI_TOKEN }}" >> .npmrc
+        echo "@react-admin:registry https://registry.marmelab.com" >> $HOME/.npmrc
+        echo "//registry.marmelab.com/:_authToken=${{ env.RA_TOKEN }}" >> $HOME/.npmrc
       shell: bash
-    - run: cat .npmrc # TODO: remove it
-      shell: bash
-  # create `.yarnrc.yml` file to be used by Yarn v2 or more
-  # TODO: add Yarn v2+ file

@@ -18,6 +18,19 @@ runs:
       shell: bash
     - name: Complete .npmrc
       run: |
-        echo "@react-admin:registry https://registry.marmelab.com" >> $HOME/.npmrc
         echo "//registry.marmelab.com/:_authToken=${{ env.RA_TOKEN }}" >> $HOME/.npmrc
+        echo "@react-admin:registry=https://registry.marmelab.com" >> $HOME/.npmrc
+      shell: bash
+    # create `.yarnrc.yml` file to be used by Yarn v2 or more
+    - name: Create .yarnrc.yml if not exists
+      run: |
+        [[ -f $HOME/.yarnrc.yml ]] || touch $HOME/.yarnrc.yml
+      shell: bash
+    - name: Complete .yarnrc.yml
+      run: |
+        echo "npmScopes:" >> $HOME/.yarnrc.yml
+        echo '  "react-admin":' >> $HOME/.yarnrc.yml
+        echo "    npmAlwaysAuth: true" >> $HOME/.yarnrc.yml
+        echo '    npmAuthToken: "${{ env.RA_TOKEN }}"' >> $HOME/.yarnrc.yml
+        echo '    npmRegistryServer: "https://registry.marmelab.com"' >> $HOME/.yarnrc.yml
       shell: bash

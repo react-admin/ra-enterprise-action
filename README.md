@@ -1,6 +1,6 @@
 # ReactAdmin Enterprise Edition action
 
-This action set up your ReactAdmin Enterprise Edition authentication by creating a `.npmrc` file (or an `.yarnrc.yml` file if you use Yarn v2 or more) and adding your secret token that you can find on your [ReactAdmin Enterprise Edition setup page](https://registry.marmelab.com/setup) to use [private modules](https://marmelab.com/ra-enterprise/#private-modules).
+This action sets up your ReactAdmin Enterprise Edition authentication by creating a `.npmrc` file (or an `.yarnrc.yml` file if you use Yarn v2 or more) and adding your secret token that you can find on your [ReactAdmin Enterprise Edition setup page](https://registry.marmelab.com/setup) to use [private modules](https://marmelab.com/ra-enterprise/#private-modules).
 
 ## Environnement variable
 

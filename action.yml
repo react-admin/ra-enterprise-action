@@ -1,5 +1,5 @@
 name: "ReactAdmin Enterprise Edition Action"
-description: "Setup your CI to install EE packages"
+description: "Set up your CI to install EE packages"
 author: "Marmelab"
 branding:
   icon: "file-plus"

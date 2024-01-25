@@ -13,7 +13,7 @@ jobs:
         with:
           fetch-depth: 0 # Fetch all the git history to enable git comparison
       - name: Token file creation
-        uses: ./.github/actions/ra-enterprise-action
+        uses: ./
         # uses: react-admin/ra-enterprise-action@1.0.0
         env:
           CI_TOKEN: ${{secrets.RA_EE_CI_TOKEN}}

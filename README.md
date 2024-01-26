@@ -21,14 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Add ReactAdmin Enterprise Edition CI token
     steps:
-      # To use this repository's private action,
-      # you must check out the repository
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0 # Fetch all the git history to enable git comparison
-      - name: Token file creation
-        uses: react-admin/ra-enterprise-action@1.0.0
+      - uses: react-admin/ra-enterprise-action@1.0.0
         env:
           RA_TOKEN: ${{secrets.RA_EE_CI_TOKEN}}
 ```

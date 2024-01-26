@@ -4,7 +4,7 @@ This action sets up your ReactAdmin Enterprise Edition authentication by creatin
 
 ## Environnement variable
 
-### `RA_TOKEN`
+### `RA_EE_CI_TOKEN`
 
 You have to provide your ReactAdmin Enterprise Edition secret CI token. Do not paste it directly in your repository but use [Github Encrypted Secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-a-repository) instead.
 
@@ -23,5 +23,5 @@ jobs:
     steps:
       - uses: react-admin/ra-enterprise-action@1.0.0
         env:
-          RA_TOKEN: ${{secrets.RA_EE_CI_TOKEN}}
+          RA_EE_CI_TOKEN: ${{secrets.RA_EE_CI_TOKEN}}
 ```

@@ -14,7 +14,6 @@ Create a file: `.github/workflows/ra-ee.yml`
 
 ```
 name: ReactAdmin Enterprise Edition CI token Action
-run-name: RA-EE action => ${{ github.actor }} ${{ github.event_name }} into ${{ github.ref }}
 on: [push]
 
 jobs:

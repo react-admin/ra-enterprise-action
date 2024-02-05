@@ -26,10 +26,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Use Node.js LTS
-        uses: actions/setup-node@v3
-        with:
-            node-version: '16'
       - name: Add React Admin Enterprise Edition CI token
         uses: react-admin/ra-enterprise-action@1.0.0
         env:

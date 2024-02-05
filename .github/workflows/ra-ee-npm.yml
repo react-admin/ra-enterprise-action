@@ -1,20 +1,19 @@
-name: RA-EE Action with NPM
+name: Test RA-EE Action with NPM
 on: [page_build]
 
 jobs:
   ra_enterprise_action_workflow:
     runs-on: ubuntu-latest
-    name: Add ReactAdmin Enterprise Edition CI token
+    name: Add React Admin Enterprise Edition CI token
     steps:
       # To use this repository's private action,
       # you must check out the repository
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          fetch-depth: 0 # Fetch all the git history to enable git comparison
       - name: Token file creation
         uses: ./
+        # Replace with the following line to test outside of this repository
         # uses: react-admin/ra-enterprise-action@1.0.0
         env:
-          CI_TOKEN: ${{secrets.RA_EE_CI_TOKEN}}
+          RA_EE_CI_TOKEN: ${{secrets.RA_EE_CI_TOKEN}}
       - run: npm install

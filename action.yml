@@ -1,4 +1,4 @@
-name: "ReactAdmin Enterprise Edition Action"
+name: "React Admin Enterprise Edition Action"
 description: "Set up your CI to install EE packages"
 author: "Marmelab"
 branding:
@@ -6,7 +6,7 @@ branding:
   color: "blue"
 env:
   RA_EE_CI_TOKEN:
-    description: "ReactAdmin Enterprise Edition secret CI token"
+    description: "React Admin Enterprise Edition CI authentication token"
     required: true
 runs:
   using: "composite"

@@ -27,7 +27,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Add React Admin Enterprise Edition CI token
-        uses: react-admin/ra-enterprise-action@1.0.0
+        uses: react-admin/ra-enterprise-action@v1.0.0
         env:
           RA_EE_CI_TOKEN: ${{secrets.RA_EE_CI_TOKEN}}
       - name: NPM install
